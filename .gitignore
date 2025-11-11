@@ -1,0 +1,13 @@
+Backend/.env
+mdb.txt
+clear_python_cache.bat
+JsBackend/.env
+node_modules
+Frontend/BusinessR/src/components/OHeader.jsx
+Frontend/BusinessR/src/components/OSearchResults.jsx
+
+Frontend/BusinessR/src/OApp.jsx
+img/1.jpg
+img/2.jpg
+img/3.jpg
+img/logo.png

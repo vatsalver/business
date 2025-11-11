@@ -1,0 +1,62 @@
+[
+  {
+    "_id": {
+      "$oid": "66f1a201e11aa111a001a001"
+    },
+    "country_code": "IN",
+    "country_name": "India",
+    "region": "Asia",
+    "sub_region": "Southern Asia",
+    "iso3": "IND",
+    "currency": "INR",
+    "population": 1428627663
+  },
+  {
+    "_id": {
+      "$oid": "66f1a201e11aa111a001a002"
+    },
+    "country_code": "US",
+    "country_name": "United States",
+    "region": "North America",
+    "sub_region": "Northern America",
+    "iso3": "USA",
+    "currency": "USD",
+    "population": 339996563
+  },
+  {
+    "_id": {
+      "$oid": "66f1a201e11aa111a001a003"
+    },
+    "country_code": "CN",
+    "country_name": "China",
+    "region": "Asia",
+    "sub_region": "Eastern Asia",
+    "iso3": "CHN",
+    "currency": "CNY",
+    "population": 1411750000
+  },
+  {
+    "_id": {
+      "$oid": "66f1a201e11aa111a001a004"
+    },
+    "country_code": "AU",
+    "country_name": "Australia",
+    "region": "Oceania",
+    "sub_region": "Australia and New Zealand",
+    "iso3": "AUS",
+    "currency": "AUD",
+    "population": 26068792
+  },
+  {
+    "_id": {
+      "$oid": "66f1a201e11aa111a001a005"
+    },
+    "country_code": "JP",
+    "country_name": "Japan",
+    "region": "Asia",
+    "sub_region": "Eastern Asia",
+    "iso3": "JPN",
+    "currency": "JPY",
+    "population": 123951692
+  }
+]

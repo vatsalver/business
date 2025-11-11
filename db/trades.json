@@ -1,0 +1,128 @@
+[
+  {
+    "country_id": {
+      "$oid": "66f1a201e11aa111a001a001"
+    },
+    "commodity_id": {
+      "$oid": "66f1a201e11aa111a001b001"
+    },
+    "year_id": {
+      "$oid": "66f1a201e11aa111a001c002"
+    },
+    "trade_type": "Export",
+    "quantity": 2100000,
+    "value_usd": 950000000,
+    "currency": "USD",
+    "unit_price": 452.38,
+    "port": "Kandla Port",
+    "created_at": "2024-06-15T10:45:00Z"
+  },
+  {
+    "country_id": {
+      "$oid": "66f1a201e11aa111a001a003"
+    },
+    "commodity_id": {
+      "$oid": "66f1a201e11aa111a001b002"
+    },
+    "year_id": {
+      "$oid": "66f1a201e11aa111a001c002"
+    },
+    "trade_type": "Export",
+    "quantity": 95000000,
+    "value_usd": 76000000000,
+    "currency": "USD",
+    "unit_price": 800.0,
+    "port": "Ningbo Port",
+    "created_at": "2024-06-12T08:00:00Z"
+  },
+  {
+    "country_id": {
+      "$oid": "66f1a201e11aa111a001a002"
+    },
+    "commodity_id": {
+      "$oid": "66f1a201e11aa111a001b003"
+    },
+    "year_id": {
+      "$oid": "66f1a201e11aa111a001c003"
+    },
+    "trade_type": "Import",
+    "quantity": 6500000,
+    "value_usd": 25000000000,
+    "currency": "USD",
+    "unit_price": 3846.15,
+    "port": "Long Beach Port",
+    "created_at": "2024-07-20T12:30:00Z"
+  },
+  {
+    "country_id": {
+      "$oid": "66f1a201e11aa111a001a005"
+    },
+    "commodity_id": {
+      "$oid": "66f1a201e11aa111a001b004"
+    },
+    "year_id": {
+      "$oid": "66f1a201e11aa111a001c001"
+    },
+    "trade_type": "Export",
+    "quantity": 2500000,
+    "value_usd": 45000000000,
+    "currency": "USD",
+    "unit_price": 18000.0,
+    "port": "Yokohama Port",
+    "created_at": "2023-02-14T09:10:00Z"
+  },
+  {
+    "country_id": {
+      "$oid": "66f1a201e11aa111a001a004"
+    },
+    "commodity_id": {
+      "$oid": "66f1a201e11aa111a001b005"
+    },
+    "year_id": {
+      "$oid": "66f1a201e11aa111a001c002"
+    },
+    "trade_type": "Export",
+    "quantity": 92000,
+    "value_usd": 5800000000,
+    "currency": "USD",
+    "unit_price": 63043.48,
+    "port": "Perth Gold Terminal",
+    "created_at": "2024-05-11T07:00:00Z"
+  },
+  {
+    "country_id": {
+      "$oid": "66f1a201e11aa111a001a001"
+    },
+    "commodity_id": {
+      "$oid": "66f1a201e11aa111a001b002"
+    },
+    "year_id": {
+      "$oid": "66f1a201e11aa111a001c003"
+    },
+    "trade_type": "Import",
+    "quantity": 82000000,
+    "value_usd": 64000000000,
+    "currency": "USD",
+    "unit_price": 780.49,
+    "port": "Mumbai Port",
+    "created_at": "2024-08-18T11:20:00Z"
+  },
+  {
+    "country_id": {
+      "$oid": "66f1a201e11aa111a001a002"
+    },
+    "commodity_id": {
+      "$oid": "66f1a201e11aa111a001b005"
+    },
+    "year_id": {
+      "$oid": "66f1a201e11aa111a001c002"
+    },
+    "trade_type": "Import",
+    "quantity": 120000,
+    "value_usd": 7500000000,
+    "currency": "USD",
+    "unit_price": 62500.0,
+    "port": "New York Port",
+    "created_at": "2024-03-01T10:00:00Z"
+  }
+]

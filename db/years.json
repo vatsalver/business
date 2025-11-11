@@ -1,0 +1,23 @@
+[
+  {
+    "_id": {
+      "$oid": "66f1a201e11aa111a001c001"
+    },
+    "year": 2022,
+    "description": "Fiscal Year 2022–2023"
+  },
+  {
+    "_id": {
+      "$oid": "66f1a201e11aa111a001c002"
+    },
+    "year": 2023,
+    "description": "Fiscal Year 2023–2024"
+  },
+  {
+    "_id": {
+      "$oid": "66f1a201e11aa111a001c003"
+    },
+    "year": 2024,
+    "description": "Fiscal Year 2024–2025"
+  }
+]

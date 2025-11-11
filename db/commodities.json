@@ -1,0 +1,52 @@
+[
+  {
+    "_id": {
+      "$oid": "66f1a201e11aa111a001b001"
+    },
+    "hs_code": "1006",
+    "commodity_name": "Rice",
+    "category": "Cereals",
+    "unit": "Tons",
+    "description": "Rice in husk or semi-milled form"
+  },
+  {
+    "_id": {
+      "$oid": "66f1a201e11aa111a001b002"
+    },
+    "hs_code": "2709",
+    "commodity_name": "Crude Oil",
+    "category": "Energy",
+    "unit": "Barrels",
+    "description": "Petroleum oils, crude"
+  },
+  {
+    "_id": {
+      "$oid": "66f1a201e11aa111a001b003"
+    },
+    "hs_code": "8542",
+    "commodity_name": "Semiconductors",
+    "category": "Electronics",
+    "unit": "Pieces",
+    "description": "Electronic integrated circuits and microassemblies"
+  },
+  {
+    "_id": {
+      "$oid": "66f1a201e11aa111a001b004"
+    },
+    "hs_code": "8703",
+    "commodity_name": "Passenger Cars",
+    "category": "Automobiles",
+    "unit": "Units",
+    "description": "Motor vehicles for transporting persons"
+  },
+  {
+    "_id": {
+      "$oid": "66f1a201e11aa111a001b005"
+    },
+    "hs_code": "7108",
+    "commodity_name": "Gold",
+    "category": "Precious Metals",
+    "unit": "Kg",
+    "description": "Gold (including plated), unwrought or semi-manufactured"
+  }
+]
