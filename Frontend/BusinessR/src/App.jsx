@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import SearchResults from "./components/SearchResults";
+import SearchR from "./components/SearchR";
+import SearchC from "./components/SearchC";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -21,7 +23,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-gray-800">
       <Header
         ref={searchInputRef}
         inputValue={inputValue}
@@ -29,7 +31,8 @@ function App() {
         onSearchSubmit={handleSearchSubmit}
       />
       {submittedQuery ? (
-        <SearchResults query={submittedQuery} />
+        //<SearchResults query={submittedQuery} />
+        <SearchR query={submittedQuery} />
       ) : (
         <Hero onExploreClick={handleExploreClick} />
       )}

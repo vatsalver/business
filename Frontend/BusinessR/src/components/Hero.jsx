@@ -10,8 +10,8 @@ const Hero = ({ onExploreClick }) => {
   return (
     <div className="relative text-white text-center py-32 md:py-48 px-4 overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gray-950 opacity-80"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-transparent to-gray-950"></div>
+        <div className="absolute inset-0 bg-gray-800 opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-transparent to-gray-950"></div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto">
@@ -31,7 +31,7 @@ const Hero = ({ onExploreClick }) => {
           onClick={onExploreClick}
           className="flex items-center justify-center mx-auto text-lg font-semibold 
                      py-3 px-8 rounded-full transition-all duration-300
-                     bg-cyan-600 text-white 
+                     bg-cyan-700 text-white 
                      hover:bg-cyan-500 hover:shadow-lg hover:shadow-cyan-500/30
                      focus:outline-none focus:ring-4 focus:ring-cyan-500 focus:ring-opacity-50
                      transform hover:-translate-y-0.5"

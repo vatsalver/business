@@ -40,7 +40,7 @@ const Header = React.forwardRef(
     };
 
     return (
-      <header className="bg-gray-900 text-gray-200 p-4 shadow-lg w-full sticky top-0 z-50">
+      <header className="bg-gray-700 text-gray-200 p-4 shadow-lg w-full sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-3">
             <PlaceholderLogo />
@@ -59,7 +59,7 @@ const Header = React.forwardRef(
               <input
                 ref={ref}
                 type="text"
-                placeholder="Search global trade data..."
+                placeholder="AI Search..."
                 className="bg-gray-800 text-white placeholder-gray-500 rounded-full py-2.5 px-5 pl-12 
                          focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all 
                          w-96 text-base"

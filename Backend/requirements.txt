@@ -1,7 +1,5 @@
-Flask
-flask-cors
+fastapi
+uvicorn
 pymongo
 python-dotenv
-torch
-transformers
-sentencepiece
+openai
