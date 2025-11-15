@@ -468,6 +468,122 @@ const SearchResults = ({ query }) => {
         </ResponsiveContainer>
       );
     } else if (
+      results.length > 0 &&
+      typeof results[0] === "object" &&
+      results[0].country_name &&
+      typeof results[0].population === "number"
+    ) {
+      // Handle country population data
+      chart = (
+        <ResponsiveContainer width="100%" height={320}>
+          <BarChart
+            data={results.map((item) => ({
+              name: item.country_name,
+              value: item.population,
+            }))}
+            margin={{ top: 10, right: 30, left: 20, bottom: 60 }}
+          >
+            <XAxis
+              dataKey="name"
+              stroke="#fff"
+              angle={-45}
+              textAnchor="end"
+              height={100}
+              interval={0}
+              tick={{ fontSize: 11, fill: "#fff" }}
+              tickMargin={5}
+            />
+            <YAxis
+              stroke="#fff"
+              tickFormatter={(v) => {
+                if (v >= 1000000000) return `${(v / 1000000000).toFixed(1)}B`;
+                if (v >= 1000000) return `${(v / 1000000).toFixed(1)}M`;
+                if (v >= 1000) return `${(v / 1000).toFixed(1)}K`;
+                return v.toLocaleString();
+              }}
+              tick={{ fontSize: 11, fill: "#fff" }}
+              width={80}
+            />
+            <Tooltip />
+            <Bar dataKey="value" fill="#00bcd4" />
+          </BarChart>
+        </ResponsiveContainer>
+      );
+    } else if (
+      results.length > 1 &&
+      typeof results[0] === "object" &&
+      // Check if there's at least one string field (for labels) and one numeric field
+      Object.keys(results[0]).some(
+        (k) => typeof results[0][k] === "string" && k !== "_id"
+      ) &&
+      Object.keys(results[0]).some(
+        (k) => typeof results[0][k] === "number" && k !== "_id"
+      )
+    ) {
+      // Generic handler for any data with string labels and numeric values
+      const stringKeys = Object.keys(results[0]).filter(
+        (k) => typeof results[0][k] === "string" && k !== "_id"
+      );
+      const numericKeys = Object.keys(results[0]).filter(
+        (k) => typeof results[0][k] === "number" && k !== "_id"
+      );
+      // Prefer name-like fields for label
+      const labelKey =
+        stringKeys.find(
+          (k) =>
+            k.toLowerCase().includes("name") ||
+            k.toLowerCase().includes("country") ||
+            k.toLowerCase().includes("commodity") ||
+            k.toLowerCase().includes("port")
+        ) || stringKeys[0];
+      // Prefer common value fields
+      const valueKey =
+        numericKeys.find(
+          (k) =>
+            k.toLowerCase().includes("population") ||
+            k.toLowerCase().includes("value") ||
+            k.toLowerCase().includes("total") ||
+            k.toLowerCase().includes("quantity")
+        ) || numericKeys[0];
+
+      if (labelKey && valueKey) {
+        chart = (
+          <ResponsiveContainer width="100%" height={320}>
+            <BarChart
+              data={results.map((item) => ({
+                name: item[labelKey],
+                value: item[valueKey],
+              }))}
+              margin={{ top: 10, right: 30, left: 20, bottom: 60 }}
+            >
+              <XAxis
+                dataKey="name"
+                stroke="#fff"
+                angle={-45}
+                textAnchor="end"
+                height={100}
+                interval={0}
+                tick={{ fontSize: 11, fill: "#fff" }}
+                tickMargin={5}
+              />
+              <YAxis
+                stroke="#fff"
+                tickFormatter={(v) => {
+                  if (v >= 1000000000) return `${(v / 1000000000).toFixed(1)}B`;
+                  if (v >= 1000000) return `${(v / 1000000).toFixed(1)}M`;
+                  if (v >= 1000) return `${(v / 1000).toFixed(1)}K`;
+                  return v.toLocaleString();
+                }}
+                tick={{ fontSize: 11, fill: "#fff" }}
+                width={80}
+              />
+              <Tooltip />
+              <Bar dataKey="value" fill="#00bcd4" />
+            </BarChart>
+          </ResponsiveContainer>
+        );
+      }
+    } else if (
       results.length > 1 &&
       typeof results[0] === "object" &&
       results[0]._id &&

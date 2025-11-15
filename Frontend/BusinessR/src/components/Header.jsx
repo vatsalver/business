@@ -406,7 +406,7 @@ const Header = React.forwardRef(
                 placeholder="AI Search..."
                 className="bg-gray-800 text-white placeholder-gray-500 rounded-full py-2.5 px-5 pl-12 
                          focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all 
-                         w-96 text-base"
+                         w-186 text-base"
                 value={inputValue}
                 onChange={onInputChange}
                 onKeyDown={handleKeyDown}

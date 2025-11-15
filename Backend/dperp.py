@@ -110,6 +110,71 @@ User: "india oil imports/exports value"
   {{"$sort": {{"total_value": -1}}}}
 ]}}
 
+User: "india vs other population"
+{{"collection": "countries", "pipeline": [
+  {{"$project": {{
+    "country_name": 1,
+    "population": 1,
+    "is_india": {{"$cond": [{{"$eq": ["$country_name", "India"]}}, "India", "Other"]}}
+  }}}},
+  {{"$group": {{
+    "_id": "$is_india",
+    "country_name": {{"$first": {{"$cond": [{{"$eq": ["$is_india", "India"]}}, "India", "Others"]}}}},
+    "population": {{"$sum": "$population"}}
+  }}}},
+  {{"$sort": {{"population": -1}}}}
+]}}
+
+User: "countries population comparison"
+{{"collection": "countries", "pipeline": [
+  {{"$project": {{
+    "_id": 0,
+    "country_name": 1,
+    "population": 1
+  }}}},
+  {{"$sort": {{"population": -1}}}},
+  {{"$limit": 10}}
+]}}
+
+User: "all countries population"
+{{"collection": "countries", "pipeline": [
+  {{"$project": {{
+    "_id": 0,
+    "country_name": 1,
+    "population": 1
+  }}}},
+  {{"$sort": {{"population": -1}}}}
+]}}
+
+User: "india vs other countries population added together"
+{{"collection": "countries", "pipeline": [
+  {{"$project": {{
+    "country_name": 1,
+    "population": 1,
+    "group": {{"$cond": [{{"$eq": ["$country_name", "India"]}}, "India", "Others"]}}
+  }}}},
+  {{"$group": {{
+    "_id": "$group",
+    "country_name": {{"$first": "$group"}},
+    "total_population": {{"$sum": "$population"}}
+  }}}},
+  {{"$project": {{
+    "_id": 0,
+    "country_name": 1,
+    "population": "$total_population"
+  }}}},
+  {{"$sort": {{"population": -1}}}}
+]}}
+
+IMPORTANT FOR POPULATION QUERIES:
+- For queries with "vs" or "versus" (e.g., "india vs other countries"), ALWAYS return separate rows for each side of the comparison:
+  * One row for the first entity (e.g., India)
+  * One row for the other side (e.g., "Others" as the sum of all other countries)
+  * This applies even if the query says "added together" for one side - that side should be grouped and summed, but keep it as a separate row from the first entity.
+- Only use $group with null _id (single row result) when the user explicitly asks for the TOTAL/SUM of ALL countries combined with NO comparison.
+- For "X vs Y" or "X compared to Y" queries, return multiple rows (at least 2), one for each comparison group.
+- Example: "india vs other countries population added together" should return 2 rows: one for India, one for "Others" (sum of all non-India countries).
+
 ALWAYS generate only valid JSON using double quotes. Only allowed values for "collection" are: trades, impexp, countries, commodities, years. Ignore any unrelated collections or fields.  
 Now, output the JSON query object for this (verbatim) user request:
 "{user_query}"
