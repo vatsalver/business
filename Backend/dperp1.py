@@ -61,8 +61,6 @@ The database is named 'Trade' (exact case). It contains these collections and re
 Instructions:
 - Choose 'trades' for queries about: specific trade lines, USD values, units, ports, trades by country/commodity/year, or "top N by value". Always join related info using $lookup and $unwind as needed.
 - Choose 'impexp' for: monthly/annual import/export totals, queries using words like "metric tonnes", or product-based aggregated import/export (e.g. LPG, MS, HSD, CRUDE OIL).
-- For commodity name matching: Use $regex with case-insensitive matching when the user mentions generic terms like "oil", "rice", etc. For example, to match "oil", use {{"$regex": "oil", "$options": "i"}}.
-- For queries asking for both imports AND exports: Use $or or group by trade_type to show both separately.
 - Only use fields exactly as shown (no guessing keys). Only output a JSON object with keys: collection and pipeline.
 
 EXAMPLES:
@@ -97,17 +95,6 @@ User: "total exports by port"
   {{"$match": {{"trade_type": "Export"}}}},
   {{"$group": {{"_id": "$port", "total_usd": {{"$sum": "$value_usd"}}}}}},
   {{"$sort": {{"total_usd": -1}}}}
-]}}
-
-User: "india oil imports/exports value"
-{{"collection": "trades", "pipeline": [
-  {{"$lookup": {{"from": "countries", "localField": "country_id", "foreignField": "_id", "as": "country_doc"}}}},
-  {{"$unwind": "$country_doc"}},
-  {{"$lookup": {{"from": "commodities", "localField": "commodity_id", "foreignField": "_id", "as": "commodity_doc"}}}},
-  {{"$unwind": "$commodity_doc"}},
-  {{"$match": {{"country_doc.country_name": "India", "commodity_doc.commodity_name": {{"$regex": "oil", "$options": "i"}}}}}},
-  {{"$group": {{"_id": {{"country": "$country_doc.country_name", "trade_type": "$trade_type"}}, "total_value": {{"$sum": "$value_usd"}}}}}},
-  {{"$sort": {{"total_value": -1}}}}
 ]}}
 
 ALWAYS generate only valid JSON using double quotes. Only allowed values for "collection" are: trades, impexp, countries, commodities, years. Ignore any unrelated collections or fields.  

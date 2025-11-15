@@ -16,8 +16,8 @@ const Hero = ({ onExploreClick }) => {
 
       <div className="relative z-10 max-w-4xl mx-auto">
         <h1
-          className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 
-                     bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500"
+          className="text-4xl md:text-7xl font-extrabold tracking-tight mb-7 
+                     bg-clip-text leading-normal text-transparent bg-gradient-to-r from-cyan-400 to-blue-500"
         >
           AI-Powered Global Trade Insights
         </h1>

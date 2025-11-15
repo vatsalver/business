@@ -14,3 +14,4 @@ img/logo.png
 Backend/__pycache__/main.cpython-314.pyc
 Backend/__pycache__/new.cpython-314.pyc
 Backend/db_tester/.env
+Frontend/BusinessR/.env
